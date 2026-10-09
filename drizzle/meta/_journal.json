@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1789209000000,
+      "tag": "0000_create_signups",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789797600000,
+      "tag": "0001_add_trip_preferences",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790001600000,
+      "tag": "0002_add_deposit_and_modifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1790553600000,
+      "tag": "0003_align_signup_runtime_fields",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1790640000000,
+      "tag": "0004_add_activities_and_signup_scope",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1790643600000,
+      "tag": "0005_add_matching_and_notifications",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1790647200000,
+      "tag": "0006_add_publishing_center",
+      "breakpoints": true
+    }
+  ]
+}

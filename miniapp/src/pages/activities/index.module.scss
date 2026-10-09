@@ -1,0 +1,106 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: 48rpx $page-padding 96rpx;
+  background: $color-bg-page;
+}
+
+.heading {
+  margin-bottom: $spacing-lg;
+  text-align: center;
+}
+
+.title,
+.subtitle {
+  display: block;
+}
+
+.title {
+  color: $color-text-primary;
+  font-size: 48rpx;
+  font-weight: $font-weight-medium;
+}
+
+.subtitle {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.regions {
+  width: 100%;
+  margin-top: $spacing-lg;
+  @include scroll-x-container;
+}
+
+.regionTrack {
+  min-width: max-content;
+  display: flex;
+  align-items: flex-end;
+  gap: 48rpx;
+}
+
+.region {
+  position: relative;
+  min-width: 72rpx;
+  padding: $spacing-md 0;
+  color: #aaa8a2;
+  font-size: $font-size-lg;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.regionActive {
+  color: $color-text-primary;
+  font-weight: $font-weight-bold;
+}
+
+.regionActive::after {
+  content: '';
+  position: absolute;
+  right: 16rpx;
+  bottom: 0;
+  left: 16rpx;
+  height: 6rpx;
+  border-radius: $radius-round;
+  background: $color-text-primary;
+}
+
+.sectionHeading {
+  margin-top: 64rpx;
+  padding-bottom: $spacing-sm;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  border-bottom: 2rpx solid $color-divider;
+  color: $color-text-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+}
+
+.rule {
+  width: 8rpx;
+  height: 48rpx;
+  background: $color-text-primary;
+}
+
+.count {
+  margin-left: auto;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+}
+
+.list {
+  display: grid;
+}
+
+.state {
+  min-height: 280rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.cloudbase.net/cli/cloudbaserc.schema.json",
+  "envId": "<请填写CloudBase环境ID>",
+  "functionRoot": ".",
+  "functions": [
+    {
+      "name": "luyouclubWeb",
+      "description": "鹿友自驾俱乐部参与者报名与组织者后台",
+      "type": "HTTP",
+      "runtime": "Nodejs20.19",
+      "dir": ".",
+      "timeout": 60,
+      "memorySize": 512,
+      "installDependency": true,
+      "public": true,
+      "gatewayPath": "/",
+      "envVariables": {
+        "CLOUDBASE_ENV_ID": "<请填写CloudBase环境ID>",
+        "CLOUDBASE_APIKEY": "<请填写CloudBase APIKey>",
+        "ADMIN_PASSWORD": "<请设置后台密码>",
+        "PUBLIC_SIGNUP_OPEN": "true",
+        "ADMIN_SESSION_SECRET": "<请填写至少32位随机字符串>"
+      }
+    }
+  ]
+}

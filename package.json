@@ -1,0 +1,21 @@
+{
+  "name": "deer-drive-club",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build:cloudbase": "node scripts/build-cloudbase.mjs",
+    "build:miniapp": "node scripts/build-miniapp.mjs",
+    "test": "npm run test:migrations && npm run test:contracts && npm run validate && npm run test:flow && npm run test:cloudbase && npm run test:stage2 && npm run test:stage3 && npm run test:stage4 && npm run test:stage5 && npm run test:miniapp",
+    "test:migrations": "python3 scripts/test-migrations.py",
+    "test:contracts": "node scripts/test-cloudbase-data-contract.mjs",
+    "test:flow": "node scripts/verify-flow.mjs",
+    "test:cloudbase": "npm run build:cloudbase && node scripts/test-cloudbase.mjs",
+    "test:stage2": "npm run build:cloudbase && node scripts/test-stage2.mjs",
+    "test:stage3": "npm run build:cloudbase && node scripts/test-stage3.mjs",
+    "test:stage4": "npm run build:cloudbase && node scripts/test-stage4.mjs",
+    "test:stage5": "npm run build:cloudbase && node scripts/test-stage5.mjs",
+    "test:miniapp": "node miniapp/tests/project-contract.mjs && node scripts/build-miniapp.mjs && node scripts/test-miniapp-delivery.mjs"
+  }
+}

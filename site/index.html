@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1012" />
+  <meta name="description" content="鹿友自驾俱乐部活动报名、智能拼车与行动方案管理原型" />
+  <title>鹿友自驾俱乐部</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230f1012'/%3E%3Cpath d='M19 17c-5-1-8-5-9-10m10 15c-7 0-12-3-15-8m40 3c5-1 8-5 9-10M44 22c7 0 12-3 15-8M22 20c1 9 3 12 10 16 7-4 9-7 10-16M22 42c3 9 17 9 20 0' fill='none' stroke='%23f6ae49' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css?v=9" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" data-go="home" aria-label="返回活动首页">
+      <img src="./assets/deer-club.png" alt="鹿友自驾俱乐部" />
+      <span><strong>鹿友</strong><small>自驾俱乐部</small></span>
+    </a>
+  </header>
+
+  <main>
+    <section id="front" class="view active">
+      <div class="phone-shell">
+        <div id="homeScreen" class="screen active club-screen">
+          <div class="club-masthead">
+            <div class="club-edition"><span>EST. 2026</span><i></i><span>WILD DRIVE · TRUE FRIENDS</span></div>
+            <div class="club-mark"><img src="./assets/deer-club.png" alt="鹿友自驾俱乐部徽标" /></div>
+            <small>鹿友自驾俱乐部</small>
+            <h1>因热爱出发，向旷野相逢；<br><em>互助同行，平安回家。</em></h1>
+            <p>我们因热爱驾驶与远方相聚<br>也愿意为每一次通行负责。</p>
+            <a class="club-primary" id="latestActivityLink" href="/trip"><span>查看最新活动</span><b id="latestActivityTitle">张北草原 · 2天3夜 →</b></a>
+          </div>
+          <div class="club-body">
+            <section class="activity-feed-section"><div class="activity-feed-title"><span>UPCOMING JOURNEYS</span><h2>最新活动</h2><p>按发布时间倒序排列，点击查看行程与报名。</p></div><div class="activity-feed" id="activityFeed"><p class="activity-loading">正在读取活动…</p></div></section>
+            <section class="club-intro"><span>WHO WE ARE</span><h2>有方向，也有分寸。</h2><p>鹿友连接愿意提供车辆的车主和热爱出发的搭车朋友。我们重视兴趣相投，也把安全、边界和责任放在每段关系之前。</p></section>
+            <section class="club-code">
+              <div class="code-title"><div><span>CLUB CODE</span><h2>鹿友基础纪律</h2></div><b>同行必读</b></div>
+              <article><i>01</i><div><strong>安全第一</strong><p>拒绝酒驾、疲劳驾驶和竞速飙车；身体不适及时说明。</p></div></article>
+              <article><i>02</i><div><strong>守时守序</strong><p>准时集合，服从领航与收尾调度，不擅自离队或改变路线。</p></div></article>
+              <article><i>03</i><div><strong>尊重边界</strong><p>文明交友，不强迫社交；未经同意，不公开他人照片和个人信息。</p></div></article>
+              <article><i>04</i><div><strong>透明互助</strong><p>费用提前说清，车内习惯互相体谅；遇到困难共同处理，不逞强。</p></div></article>
+              <article><i>05</i><div><strong>爱护环境</strong><p>遵守当地规定，不乱停、不扰民，带走自己的垃圾。</p></div></article>
+            </section>
+            <div class="club-signature"><span>守住纪律，才有自在。</span><img src="./assets/deer-club.png" alt="" /></div>
+            <a class="club-bottom-cta" href="/?screen=journey" data-enter-journey>进入本次旅行 <span>→</span></a>
+          </div>
+        </div>
+
+        <div id="journeyScreen" class="screen">
+          <div class="hero">
+            <div class="hero-top"><span class="pill live"><i></i> 首发招募中</span><span>07.17—07.20</span></div>
+            <div class="trip-kicker">NO.01 · 张北草原</div>
+            <h1>去风吹过的地方<br><em>遇见同频的人</em></h1>
+            <p>2天3夜 · 草原天路 · 轻社交自驾</p>
+            <div class="route"><span>北京</span><b></b><span>野狐岭</span><b></b><span>桦皮岭</span></div>
+          </div>
+          <div class="quick-stats">
+            <div><strong id="publicSignupCount">0</strong><span>已报名</span></div><div><strong id="publicVehicleCount">0</strong><span>可用车辆</span></div><div><strong id="publicSeatCount">0</strong><span>剩余座位</span></div>
+          </div>
+          <div class="content-pad">
+            <article class="journey-glance">
+              <div class="glance-head"><div><small>本次旅行</small><strong>张北草原 · 2天3夜</strong></div><span>约 760km</span></div>
+              <div class="mini-days"><div><b>DAY 1</b><span>草原天路西线</span><small>野狐岭 · 中都草原 · 日落</small></div><i></i><div><b>DAY 2</b><span>草原天路东线</span><small>元中都 · 桦皮岭 · 风车路</small></div></div>
+              <a href="/trip" data-trip>打开旅行手册 <span>→</span></a>
+            </article>
+            <div class="section-title"><div><span>01</span><h2>选择你的参与方式</h2></div><p>系统会按地点与兴趣自动匹配</p></div>
+            <div class="role-cards">
+              <a class="role-card owner" href="/signup?role=owner" data-role="owner"><span class="role-icon">🚙</span><div><small>我是车主</small><strong>开车同行</strong><p>登记车辆与空余座位</p></div><span class="arrow">→</span></a>
+              <a class="role-card rider" href="/signup?role=rider" data-role="rider"><span class="role-icon">🎒</span><div><small>我是搭车</small><strong>搭车同行</strong><p>等待智能匹配附近车主</p></div><span class="arrow">→</span></a>
+            </div>
+            <div class="notice"><span>✦</span><p><strong>匹配原则</strong> 同路线优先，其次兼顾兴趣契合和性别偏好；详细住址仅组织者可见。</p></div>
+          </div>
+        </div>
+
+        <div id="tripScreen" class="screen trip-screen">
+          <div class="trip-cover">
+            <div class="trip-cover-nav"><a href="/journey" data-trip-back>←</a><span>鹿友首发 · 旅行手册</span><button id="shareTrip">分享</button></div>
+            <div class="trip-cover-copy"><small>JUL 17—20 · 2 DAYS / 3 NIGHTS</small><h2>张北草原<br><em>风起天路</em></h2><p>在辽阔里开车，也在同行中认识新朋友。</p></div>
+            <div class="trip-stamp"><b>01</b><span>首发<br>路线</span></div>
+          </div>
+          <div class="trip-body">
+            <div class="trip-facts"><div><small>出发地</small><b>北京 · 清河</b></div><div><small>旅行强度</small><b>轻松 · 适合新手</b></div><div><small>建议车型</small><b>不限 · 满油出发</b></div></div>
+            <section class="trip-lead"><span>THE JOURNEY</span><h2>两天属于草原，<br>三晚留给相遇。</h2><p>周五晚集合抵达张北，周六、周日完整游玩，周日晚在县城休整，周一早晨从容返京。尽量把驾驶放在白天，把时间留给风景与朋友。</p></section>
+            <section class="published-update" id="publishedUpdate"><div><small>ORGANIZER UPDATE</small><h2 id="publishedTitle">张北草原 · 风起天路</h2><p id="publishedDate">07.17—07.20 · 2天3夜</p></div><p id="publishedRoute">北京 → 野狐岭 → 中都草原 → 桦皮岭 → 北京</p><div id="publishedTimeline"></div><div id="publishedNotice"></div><div id="publishedStories"></div></section>
+            <section class="day-card night"><div class="day-index"><small>FRI</small><b>启程夜</b></div><div class="day-content"><time>19:30</time><h3>北京集合 · 抵达张北</h3><p>清河收费站外集合，车队编号与安全说明；20:00 出发，途中服务区休整一次，约 23:30 入住张北县城。</p><div class="stay">NIGHT 1 <span>张北县城酒店</span></div></div></section>
+            <section class="day-card"><div class="day-index"><small>SAT</small><b>DAY 1</b></div><div class="day-content"><time>08:30—21:00</time><h3>野狐岭 → 草原天路西线 → 中都草原</h3><p>上午从野狐岭进入天路，在塞北梯田与风车观景点分段停留；下午前往中都草原，安排轻徒步、破冰游戏与草原日落。</p><div class="day-spots"><span>野狐岭</span><span>塞北梯田</span><span>中都草原</span></div><div class="stay">NIGHT 2 <span>中都草原营地 / 酒店</span></div></div></section>
+            <section class="day-card"><div class="day-index"><small>SUN</small><b>DAY 2</b></div><div class="day-content"><time>08:30—21:30</time><h3>元中都 → 草原天路东线 → 桦皮岭</h3><p>上午了解元代中都文化，午后由西向东穿越草原天路主景观段；傍晚在桦皮岭一带收束行程，返回张北县城聚餐。</p><div class="day-spots"><span>元中都</span><span>天路东线</span><span>桦皮岭</span></div><div class="stay">NIGHT 3 <span>张北县城酒店</span></div></div></section>
+            <section class="day-card return"><div class="day-index"><small>MON</small><b>返程晨</b></div><div class="day-content"><time>08:30—12:30</time><h3>早餐后返京</h3><p>统一检查车辆后出发，预计中午抵达北京清河，各车组按原接送方案解散。</p></div></section>
+            <section class="road-notes"><div><span>15–25°C</span><small>草原温差大<br>带防风外套</small></div><div><span>2人 / 车</span><small>建议双司机<br>拒绝疲劳驾驶</small></div><div><span>频道 6</span><small>统一对讲<br>领航收尾</small></div></section>
+            <section class="packing"><div><span>出发前</span><h2>带上这些</h2></div><p><i>01</i> 身份证、驾驶证、行驶证</p><p><i>02</i> 防晒、防风外套、舒适运动鞋</p><p><i>03</i> 常用药、充电宝、保温水杯</p><p><i>04</i> 车辆检查、满油或满电</p></section>
+            <p class="trip-disclaimer">实际开放、餐饮与活动安排以出发前通知及当天现场情况为准；遇大风、暴雨等天气将优先调整路线。</p>
+            <div class="trip-signup-actions" aria-label="选择报名身份">
+              <a class="trip-cta owner" href="/signup?role=owner" data-role="owner">车主报名 <span>→</span></a>
+              <a class="trip-cta rider" href="/signup?role=rider" data-role="rider">搭车报名 <span>→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="formScreen" class="screen">
+          <div class="mobile-head"><a href="/journey" data-back>←</a><div><strong id="formTitle">参与报名</strong><span>资料仅用于本次活动匹配</span></div><b id="stepText">1 / 3</b></div>
+          <div class="progress"><i></i></div>
+          <form id="signupForm" class="signup-form">
+            <div class="form-step active" data-step="1">
+              <div class="form-intro"><span>01</span><h2>先认识一下你</h2><p>填写基本资料，方便组织者联络</p></div>
+              <div class="field-grid">
+                <label><span>姓名 / 昵称</span><input name="name" required placeholder="怎么称呼你" /></label>
+                <label><span>手机号</span><input name="phone" required inputmode="tel" placeholder="用于活动联络" /></label>
+                <label><span>微信号</span><input name="wechat" required autocomplete="off" placeholder="用于后续联系" /></label>
+                <label><span>性别</span><select name="gender"><option>男</option><option>女</option><option>不便透露</option></select></label>
+                <label><span>年龄段</span><select name="age"><option>25–30</option><option>31–35</option><option>36–40</option><option>40+</option></select></label>
+                <label><span>星座</span><select name="zodiac"><option>请选择</option><option>白羊座</option><option>金牛座</option><option>双子座</option><option>巨蟹座</option><option>狮子座</option><option>处女座</option><option>天秤座</option><option>天蝎座</option><option>射手座</option><option>摩羯座</option><option>水瓶座</option><option>双鱼座</option></select></label>
+              </div>
+            </div>
+            <div class="form-step" data-step="2">
+              <div class="form-intro"><span>02</span><h2>你的日常坐标</h2><p>地点越准确，接送路线越合理</p></div>
+              <label><span>上班地点</span><input name="work" required placeholder="例：海淀区中关村" /></label>
+              <label><span>住宿地点</span><input name="home" required placeholder="例：朝阳区望京附近" /></label>
+              <label><span>方便集合的地点</span><input name="pickup" placeholder="例：地铁8号线永泰庄站" /></label>
+              <p class="privacy">🔒 具体地点仅组织者可见，匹配后车友只看到约定集合点。</p>
+            </div>
+            <div class="form-step" data-step="3">
+              <div class="form-intro"><span>03</span><h2>找到同频伙伴</h2><p>直接点击选择，最多 5 个兴趣标签</p></div>
+              <div class="chips" id="interestChips"><label><input type="checkbox" name="interests" value="露营"><span>露营</span></label><label><input type="checkbox" name="interests" value="摄影"><span>摄影</span></label><label><input type="checkbox" name="interests" value="徒步"><span>徒步</span></label><label><input type="checkbox" name="interests" value="美食"><span>美食</span></label><label><input type="checkbox" name="interests" value="音乐"><span>音乐</span></label><label><input type="checkbox" name="interests" value="桌游"><span>桌游</span></label><label><input type="checkbox" name="interests" value="宠物"><span>宠物</span></label><label><input type="checkbox" name="interests" value="电影"><span>电影</span></label><label><input type="checkbox" name="interests" value="旅行"><span>旅行</span></label><label><input type="checkbox" name="interests" value="健身"><span>健身</span></label></div>
+              <div class="preference-grid">
+                <label><span>你是否吸烟</span><select name="smoking" required><option value="不吸烟">不吸烟</option><option value="吸烟">吸烟</option></select></label>
+                <label><span id="acceptSmokingLabel">是否接受同行者吸烟</span><select name="acceptsSmoking" required><option value="不接受">不接受</option><option value="接受">接受</option></select></label>
+                <label><span>住宿需求</span><select name="roomType" required><option value="单间">单间</option><option value="标间">标间（仅匹配同性别同行者）</option></select></label>
+              </div>
+              <div id="vehicleFields" class="vehicle-fields">
+                <label><span>车辆与颜色</span><input name="vehicle" placeholder="例：坦克300 · 黑色" /></label>
+                <label><span>可提供座位</span><select name="seats"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+                <label><span>完整车牌号</span><input name="licensePlate" data-owner-required placeholder="例：京A12345" autocomplete="off" /></label>
+                <fieldset class="modification-field"><legend>车辆是否改装过（可多选）</legend><div class="check-grid"><label><input type="checkbox" name="modifications" value="轮胎" /><span>轮胎</span></label><label><input type="checkbox" name="modifications" value="减震" /><span>减震</span></label><label><input type="checkbox" name="modifications" value="绞盘" /><span>绞盘</span></label></div></fieldset>
+              </div>
+              <label><span>个人需求与备注</span><textarea name="note" rows="3" placeholder="请填写饮食、接送、作息、携带宠物或其他需求"></textarea></label>
+              <section class="deposit-card"><div class="deposit-title"><span>报名定金</span><strong>¥200</strong></div><p>车主和搭车均需支付。请使用微信扫码付款，并备注“姓名＋手机号后4位”。</p><div class="deposit-qr-label">鹿友自驾俱乐部官方收款二维码</div><div class="deposit-qr-crop"><img src="./assets/deposit-qr.jpg" alt="鹿友自驾俱乐部官方收款二维码" /></div><div class="refund-rule"><b>退款规则</b><span>活动开始前超过1天可申请退款；活动开始前1天以内取消，定金不予退还。</span></div><label class="deposit-confirm"><input type="checkbox" name="depositConfirmed" value="yes" required /><span>我已支付200元定金，并同意上述退款规则</span></label><small>提交后由组织者人工核验到账情况。</small></section>
+              <label class="deposit-confirm"><input type="checkbox" name="contactConsent" value="yes" required /><span>我同意在组织者确认匹配后，向同车成员展示手机号和微信号</span></label>
+              <label class="deposit-confirm"><input type="checkbox" name="notificationConsent" value="yes" /><span>我同意接收本次活动的匹配与行前通知</span></label>
+            </div>
+            <div class="form-actions"><button type="button" id="prevBtn" class="ghost hidden">上一步</button><button type="button" id="nextBtn" class="primary">继续</button><button type="submit" id="submitBtn" class="primary hidden">提交报名</button></div>
+          </form>
+        </div>
+
+        <div id="profileScreen" class="screen">
+          <div class="mobile-head"><button data-back-home>←</button><div><strong>我的报名</strong><span id="profileActivity">当前活动</span></div><b class="status-dot" id="profileStatus">已提交</b></div>
+          <div class="profile-card"><div class="avatar" id="profileAvatar">鹿</div><div><small id="profileRole">报名成员</small><h2 id="profileName">报名资料</h2><p id="profileMeta">等待读取真实报名信息</p></div></div>
+          <div class="match-card" id="profileMatch"><div class="match-head"><span>车组匹配</span><b id="profileMatchScore">待确认</b></div><h3 id="profileMatchTitle">报名资料已进入匹配队列</h3><div id="profileMatchPeople"><p>组织者确认真实车组后，这里会显示经授权的联系信息。</p></div><div class="reason-tags" id="profileMatchReasons"></div></div>
+          <article class="traveler-pass">
+            <div class="pass-top"><span>DEER CLUB · MATCH STATUS</span><b id="passStatus">待组织者确认</b></div><div class="pass-route"><small>本次活动</small><h3 id="passActivity">鹿友自驾活动</h3><p>以活动详情与组织者通知为准</p></div>
+            <div class="pass-meta"><div><small>你的车组</small><b id="passGroup">尚未发布</b></div><div><small>集合</small><b id="passMeet">待车组协商</b></div></div>
+            <button data-trip>查看旅行手册与行前须知 →</button>
+          </article>
+          <div class="details-list"><h3>报名资料</h3><div><span>上班地点</span><b id="profileWork">海淀区中关村</b></div><div><span>住宿地点</span><b id="profileHome">朝阳区望京</b></div><div><span>集合地点</span><b id="profilePickup">清河收费站</b></div></div>
+          <button class="edit-link" data-edit>修改报名资料</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin" class="view">
+      <aside class="sidebar">
+        <div class="admin-brand"><img src="./assets/deer-club.png" alt=""/><span><strong>鹿友</strong><small>活动管理台</small></span></div>
+        <nav><a class="active" href="/admin?tab=overview" data-admin-tab="overview">⌁ <span>活动与报名</span><i id="navSignupCount">0</i></a><a href="/admin?tab=matches" data-admin-tab="matches">⌘ <span>智能匹配</span><i class="amber" id="navPendingCount">0</i></a><a href="/admin?tab=recap" data-admin-tab="recap">▧ <span>过往总结</span></a><a href="/admin?tab=plan" data-admin-tab="plan">▤ <span>活动招募与行动方案</span></a></nav>
+        <div class="organizer"><span>姚</span><div><strong>活动组织者</strong><small>管理员</small></div></div>
+      </aside>
+      <div class="admin-main">
+        <div class="admin-top"><div><small>07 / 17—20</small><strong>鹿友首发 · 张北草原风起天路</strong></div><div class="admin-actions"><button id="rerunMatch">↻ 重新匹配</button><button class="export-btn">导出方案</button></div></div>
+
+        <div id="overviewPanel" class="admin-panel active">
+          <div class="admin-heading"><div><span>ACTIVITY OVERVIEW</span><h1>活动总览</h1><p>报名进度、车辆运力与匹配情况一目了然。</p></div><button class="outline">分享报名入口 ↗</button></div>
+          <div class="metric-grid">
+            <article><span class="metric-icon orange">人</span><div><small>报名人数</small><strong><span id="metricSignups">0</span> <em>人</em></strong><p><b id="metricToday">0</b> 今日新增</p></div></article>
+            <article><span class="metric-icon blue">车</span><div><small>报名车主</small><strong><span id="metricOwners">0</span> <em>人</em></strong><p>可提供 <b id="metricSeats">0</b> 个座位</p></div></article>
+            <article><span class="metric-icon green">搭</span><div><small>搭车</small><strong><span id="metricRiders">0</span> <em>人</em></strong><p>等待组织者统一匹配</p></div></article>
+            <article><span class="metric-icon red">!</span><div><small>待处理</small><strong><span id="metricPending">0</span> <em>人</em></strong><p>新报名等待匹配</p></div></article>
+          </div>
+          <div class="operations-strip" aria-label="运营状态">
+            <div><small>候补</small><b id="dashboardWaitlist">0</b></div>
+            <div><small>已签到</small><b id="dashboardCheckin">0</b></div>
+            <div><small>已退款</small><b id="dashboardRefund">¥0</b></div>
+            <div><small>匹配均分</small><b id="dashboardMatchScore">0</b></div>
+          </div>
+          <div class="admin-grid">
+            <article class="panel route-plan"><div class="panel-title"><div><small>ROUTE CAPACITY</small><h2>路线与运力</h2></div><button>查看详情</button></div><div class="route-line"><div><i></i><strong>北京清河</strong><span>周五 19:30</span></div><div><i></i><strong>野狐岭</strong><span>周六 08:30</span></div><div><i></i><strong>中都草原</strong><span>周六 17:30</span></div></div><div class="capacity"><div><span><b>24</b> / 28 人</span><strong>当前运力覆盖</strong></div><progress value="24" max="28"></progress><p>还需 <b>1 辆 4 座车</b> 或调整现有座位</p></div></article>
+            <article class="panel match-health"><div class="panel-title"><div><small>MATCH QUALITY</small><h2>匹配质量</h2></div><span class="score">89<small>综合分</small></span></div><div class="rings"><div class="ring" style="--p:92"><span>92%</span><small>地点顺路</small></div><div class="ring" style="--p:86"><span>86%</span><small>兴趣契合</small></div><div class="ring" style="--p:79"><span>79%</span><small>偏好满足</small></div></div><p class="ai-note"><span>✦</span>系统建议：将李沐调整至 3 号车，可减少约 12 分钟接送时间。</p></article>
+          </div>
+          <article class="panel recent"><div class="panel-title"><div><small>RECENT SIGNUPS</small><h2>最新报名</h2></div><button data-open-people>查看全部 28 人 →</button></div><div class="table-wrap"><table><thead><tr><th>成员</th><th>身份</th><th>住宿地点</th><th>兴趣标签</th><th>状态</th></tr></thead><tbody><tr><td><span class="person p1">周</span><b>周屿</b><small>双子座 · 32岁</small></td><td><i class="tag owner-tag">车主 · 2座</i></td><td>海淀区 · 五道口</td><td><i class="soft">摄影</i><i class="soft">徒步</i></td><td><i class="matched">已匹配</i></td></tr><tr><td><span class="person p2">林</span><b>林晚</b><small>天秤座 · 29岁</small></td><td><i class="tag rider-tag">搭车</i></td><td>朝阳区 · 望京</td><td><i class="soft">摄影</i><i class="soft">露营</i></td><td><i class="matched">已匹配</i></td></tr><tr><td><span class="person p3">陈</span><b>陈放</b><small>射手座 · 35岁</small></td><td><i class="tag owner-tag">车主 · 3座</i></td><td>昌平区 · 回龙观</td><td><i class="soft">越野</i><i class="soft">音乐</i></td><td><i class="pending">待确认</i></td></tr></tbody></table></div></article>
+        </div>
+
+        <div id="peoplePanel" class="admin-panel">
+          <div class="admin-heading"><div><span>MEMBER DIRECTORY</span><h1>报名成员</h1><p>查看车主和参与者的完整报名信息。</p></div><div class="search-box">⌕ <input id="memberSearch" placeholder="搜索姓名、地点或兴趣" /></div></div>
+          <div class="filter-row"><button class="active" data-filter="all" id="filterAll">全部 0</button><button data-filter="owner" id="filterOwners">车主 0</button><button data-filter="rider" id="filterRiders">搭车 0</button></div>
+          <article class="panel member-table"><div class="table-wrap"><table><thead><tr><th>成员</th><th>联系电话</th><th>身份 / 车辆</th><th>上班地点</th><th>住宿 / 集合</th><th>兴趣 / 备注</th><th>状态</th></tr></thead><tbody id="memberRows"></tbody></table></div></article>
+        </div>
+
+        <div id="matchesPanel" class="admin-panel">
+          <div class="admin-heading"><div><span>SMART MATCHING</span><h1>智能匹配</h1><p>按路线、兴趣、住宿偏好评分，并严格执行座位和吸烟约束。</p></div><div class="match-actions"><button class="outline admin-primary" id="copyMatchNotice">复制通知文案</button><button class="outline admin-primary" id="confirmMatch">确认发布</button><button class="primary admin-primary" id="autoMatch">生成匹配草案</button></div></div>
+          <div class="match-summary"><div><b id="matchAssigned">0</b><span>已安排</span></div><div><b id="matchWaiting">0</b><span>待安排</span></div><div><b id="matchScore">0</b><span>平均匹配分</span></div><p>仅显示真实报名数据</p></div>
+          <div id="manualMatchEditor"></div>
+          <div class="convoy-grid" id="convoyGrid"></div>
+        </div>
+
+        <div id="recapPanel" class="admin-panel">
+          <div class="admin-heading"><div><span>PAST JOURNEYS</span><h1>过往总结</h1><p>整理已经去过的地方，发布照片、视频和活动故事。</p></div><a class="outline admin-primary" href="/trip" target="_blank">查看参与者页面 ↗</a></div>
+          <form class="panel publish-editor standalone-editor" id="recapEditor">
+            <div class="panel-title"><div><small>PAST JOURNEYS</small><h2>去过的地方</h2><p>发布往期照片、视频与活动总结，系统自动排版。</p></div><span class="section-badge">宣传资料</span></div>
+            <div class="editor-grid single"><label><span>回顾标题</span><input name="recapTitle" placeholder="例：坝上秋日回顾"></label><label class="wide"><span>活动总结</span><textarea name="recapText" rows="7" placeholder="写下沿途故事、活动亮点和参与感受……"></textarea></label></div>
+            <label class="media-drop"><input id="recapMediaInput" type="file" accept="image/*,video/*" multiple><b>＋ 上传照片或视频</b><span>可从手机相册或电脑选择，单个文件不超过 30MB</span></label>
+            <div class="media-preview" id="recapMediaPreview"></div>
+            <div class="publish-actions"><button type="submit" class="primary">发布往期总结</button></div>
+          </form>
+        </div>
+
+        <div id="planPanel" class="admin-panel">
+          <div class="admin-heading"><div><span>RECRUITMENT & ACTION PLAN</span><h1>活动招募与行动方案</h1><p>编辑下一次招募和执行安排，发布后同步参与者旅行手册。</p></div><button class="primary admin-primary" id="copyPlan">复制方案</button></div>
+          <article class="admin-trip-banner"><img src="./assets/zhangbei-hero.png" alt="张北草原公路与自驾车队"/><div><small>TRIP 01 · 2天3夜</small><h2>张北草原 · 风起天路</h2><p>北京 → 野狐岭 → 中都草原 → 桦皮岭 → 北京</p></div><a class="outline" href="/trip" target="_blank">预览参与者手册 ↗</a></article>
+            <form class="panel publish-editor standalone-editor" id="contentEditor">
+              <div class="panel-title"><div><small>NEXT RECRUITMENT</small><h2>下一次活动招募</h2><p>编辑行程、招募文案和展示素材，一键同步参与者页面。</p></div><span id="publishStatus">尚未保存</span></div>
+              <div class="layout-generator" id="layoutGenerator">
+                <div><b>结构化智能排版</b><span>根据活动标题、路线和亮点生成旅行杂志、路线手册与社群招募三套方案。</span></div>
+                <button type="button" class="outline" id="generateLayouts">生成方案</button>
+              </div>
+              <div class="layout-variants" id="layoutVariants"></div>
+              <div class="editor-grid"><label><span>活动标题</span><input name="title" value="张北草原 · 风起天路" required></label><label><span>活动日期</span><input name="dateText" value="07.17—07.20 · 2天3夜" required></label><label class="wide"><span>路线</span><input name="route" value="北京 → 野狐岭 → 中都草原 → 桦皮岭 → 北京" required></label><label class="wide"><span>行动时间线</span><textarea name="timeline" rows="6" placeholder="每行一项，如：周五 19:30｜北京清河集合"></textarea></label><label class="wide"><span>行前须知</span><textarea name="notice" rows="4" placeholder="参与者需要提前了解的事项"></textarea></label><label class="wide"><span>招募标题</span><input name="nextTitle" placeholder="例：金山岭长城秋驾招募中"></label><label class="wide"><span>招募介绍</span><textarea name="nextText" rows="6" placeholder="介绍目的地、活动特色、人数和报名要求……"></textarea></label></div>
+              <label class="media-drop"><input id="nextMediaInput" type="file" accept="image/*,video/*" multiple><b>＋ 上传招募照片或视频</b><span>素材会自动排列在招募内容中</span></label>
+              <div class="media-preview" id="nextMediaPreview"></div>
+              <div class="publish-actions"><button type="button" class="outline" id="saveDraft">保存草稿</button><button type="submit" class="primary" id="publishActivity">发布下一次招募</button></div>
+              <p class="push-note">网页内容发布后立即同步。微信订阅通知需原生小程序上线后，配置订阅消息并由用户主动授权。</p>
+            </form>
+          <div class="plan-layout"><article class="panel timeline"><h2>出发时间线</h2><div><b>周五 19:00</b><span><strong>各车主开始接人</strong><small>按右侧车组集合点执行</small></span></div><div><b>19:30</b><span><strong>北京清河统一集合</strong><small>车辆清点、安全提醒、发放车贴</small></span></div><div><b>20:00</b><span><strong>车队驶向张北</strong><small>1号领航，9号收尾；对讲频道 6</small></span></div><div><b>23:30</b><span><strong>抵达张北县城</strong><small>签到入住，次日 08:30 集合</small></span></div><div><b>周一 08:30</b><span><strong>统一返京</strong><small>预计 12:30 抵达北京清河</small></span></div></article><article class="panel group-plan"><div class="panel-title"><h2>接送分组</h2><span>共 9 车</span></div><div id="planGroups"></div><div class="plan-warning"><b>待处理</b><p>城北仍有 3 位伙伴未安排，建议征集 1 辆 4 座车。</p></div></article></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="/club-interactions?v=9"></script>
+</body>
+</html>

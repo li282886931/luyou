@@ -1,0 +1,275 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: 40rpx 0 $spacing-xl;
+  background: $color-bg-page;
+}
+
+.hero {
+  position: relative;
+  height: 760rpx;
+  margin: 0 $page-padding;
+  overflow: hidden;
+  border-radius: $radius-md;
+  background: $color-brand-ink;
+}
+
+.heroImage,
+.heroShade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroShade {
+  background: linear-gradient(180deg, rgba(10, 13, 12, 0.34), rgba(10, 13, 12, 0.92));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 64rpx $spacing-lg 48rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.edition {
+  margin-top: auto;
+  color: $color-primary-light;
+  font-size: 20rpx;
+  font-weight: $font-weight-bold;
+}
+
+.title,
+.slogan,
+.intro {
+  display: block;
+}
+
+.title {
+  max-width: 650rpx;
+  margin-top: $spacing-md;
+  color: $color-text-white;
+  font-size: 52rpx;
+  font-weight: $font-weight-bold;
+  line-height: 1.18;
+}
+
+.slogan {
+  margin-top: $spacing-sm;
+  color: $color-primary-light;
+  font-size: 40rpx;
+  font-weight: $font-weight-bold;
+}
+
+.intro {
+  max-width: 560rpx;
+  margin-top: $spacing-md;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.heroButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-lg;
+  margin-top: $spacing-xl;
+  padding: 0 $spacing-lg;
+  justify-content: space-between;
+  border: 0;
+  border: 2rpx solid rgba(255, 255, 255, 0.7);
+  border-radius: $radius-sm;
+  background: rgba(15, 17, 16, 0.58);
+  color: $color-text-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.stats {
+  position: relative;
+  z-index: 2;
+  width: $max-content-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 2rpx solid $color-divider;
+  background: transparent;
+}
+
+.stats > view {
+  min-height: 128rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.stats > view + view {
+  border-left: 2rpx solid $color-divider;
+}
+
+.statValue {
+  margin-bottom: $spacing-xs;
+  color: $color-text-primary;
+  font-size: 38rpx;
+  font-weight: $font-weight-bold;
+}
+
+.content {
+  padding: 56rpx $page-padding;
+}
+
+.sectionHead {
+  margin-bottom: $spacing-lg;
+  padding-left: $spacing-sm;
+  border-left: 8rpx solid $color-text-primary;
+}
+
+.eyebrow,
+.sectionTitle {
+  display: block;
+}
+
+.eyebrow {
+  color: $color-primary-dark;
+  font-size: 19rpx;
+  font-weight: $font-weight-bold;
+}
+
+.sectionTitle {
+  margin-top: $spacing-xs;
+  color: $color-text-primary;
+  font-size: 42rpx;
+  font-weight: $font-weight-bold;
+}
+
+.loading {
+  min-height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.roleSection {
+  margin-top: 80rpx;
+  padding-top: $spacing-lg;
+  border-top: 2rpx solid $color-divider;
+}
+
+.roleGrid {
+  margin-top: $spacing-md;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.ownerButton,
+.riderButton {
+  @include button-reset;
+  min-height: 176rpx;
+  padding: $spacing-md;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 0;
+  border-radius: $radius-sm;
+  text-align: left;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.ownerButton {
+  background: $color-brand-green;
+  color: $color-text-white;
+}
+
+.riderButton {
+  background: $color-primary;
+  color: $color-brand-ink;
+}
+
+.roleIcon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: $radius-round;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+}
+
+.roleTitle,
+.roleDesc {
+  display: block;
+}
+
+.roleTitle {
+  margin-top: $spacing-sm;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+}
+
+.roleDesc {
+  margin-top: $spacing-xs;
+  opacity: 0.68;
+  font-size: 20rpx;
+  white-space: normal;
+}
+
+.codeSection {
+  margin-top: 80rpx;
+  padding: $spacing-lg 0 0;
+  border-top: 8rpx solid $color-text-primary;
+  background: transparent;
+}
+
+.codeItem {
+  display: grid;
+  grid-template-columns: 56rpx minmax(0, 1fr);
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+  border-bottom: 2rpx solid $color-divider;
+}
+
+.codeNo {
+  color: $color-primary-dark;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+}
+
+.codeTitle,
+.codeDesc {
+  display: block;
+}
+
+.codeTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.codeDesc {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+}

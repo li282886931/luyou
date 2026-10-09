@@ -1,0 +1,358 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 152rpx;
+  background: $color-bg-page;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-tertiary;
+}
+
+.cover {
+  position: relative;
+  height: 680rpx;
+  margin: $spacing-lg $page-padding 0;
+  overflow: hidden;
+  border-radius: $radius-md;
+  background: $color-brand-ink;
+}
+
+.coverImage,
+.coverShade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.coverShade {
+  background: linear-gradient(180deg, rgba(8, 12, 11, 0.08), rgba(8, 12, 11, 0.88));
+}
+
+.coverCopy {
+  position: absolute;
+  right: $page-padding;
+  bottom: 64rpx;
+  left: $page-padding;
+  color: $color-text-white;
+}
+
+.kicker,
+.title,
+.date,
+.kickerDark,
+.heading,
+.description,
+.label,
+.route,
+.sectionTitle,
+.noticeText,
+.timelineTime,
+.timelineDetail {
+  display: block;
+}
+
+.kicker,
+.kickerDark {
+  color: $color-primary-light;
+  font-size: 20rpx;
+  font-weight: $font-weight-bold;
+}
+
+.title {
+  margin-top: $spacing-sm;
+  font-size: 56rpx;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+.date {
+  margin-top: $spacing-sm;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: $font-size-sm;
+}
+
+.body {
+  padding: 0 $page-padding;
+}
+
+.routePanel {
+  padding: $spacing-lg 0;
+  border-bottom: 16rpx solid #efede8;
+}
+
+.label {
+  color: $color-primary-dark;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+}
+
+.route {
+  margin-top: $spacing-sm;
+  color: $color-text-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-loose;
+}
+
+.lead {
+  padding: 64rpx 8rpx 48rpx;
+}
+
+.kickerDark {
+  color: $color-primary-dark;
+}
+
+.heading {
+  margin-top: $spacing-sm;
+  font-size: 42rpx;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+.description {
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $spacing-xs;
+}
+
+.highlight {
+  min-height: 260rpx;
+  padding: $spacing-sm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: $radius-sm;
+  color: $color-text-white;
+}
+
+.highlight:nth-child(1) {
+  background: #3f4642;
+}
+
+.highlight:nth-child(2) {
+  background: $color-accent-gold;
+}
+
+.highlight:nth-child(3) {
+  background: $color-accent-red;
+}
+
+.highlight:nth-child(4) {
+  background: $color-accent-teal;
+}
+
+.highlightNo {
+  font-size: 18rpx;
+  font-weight: $font-weight-bold;
+}
+
+.highlightText {
+  font-size: $font-size-sm;
+  line-height: $line-height-tight;
+  writing-mode: vertical-rl;
+  align-self: flex-end;
+}
+
+.editorialSection,
+.timeline,
+.notice {
+  margin-top: 80rpx;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.sectionRule {
+  width: 8rpx;
+  height: 64rpx;
+  flex: 0 0 auto;
+  background: $color-text-primary;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+}
+
+.sectionSubtitle {
+  display: block;
+  margin-top: 4rpx;
+  color: $color-text-tertiary;
+  font-size: 20rpx;
+}
+
+.routeSketch {
+  position: relative;
+  padding: 40rpx $spacing-lg;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56rpx $spacing-lg;
+  border: 2rpx dashed #bbb5aa;
+  border-radius: 48% 42% 46% 38%;
+}
+
+.routeStop {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+}
+
+.routeStop:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.routeNode {
+  width: 20rpx;
+  height: 20rpx;
+  flex: 0 0 auto;
+  border: 5rpx solid $color-bg-page;
+  border-radius: $radius-round;
+  background: $color-accent-teal;
+  box-shadow: 0 0 0 2rpx $color-accent-teal;
+}
+
+.routeStop:nth-child(3n) .routeNode {
+  background: $color-primary;
+  box-shadow: 0 0 0 2rpx $color-primary;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 64rpx minmax(0, 1fr);
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+  border-top: 2rpx solid $color-divider;
+}
+
+.timelineItem:first-of-type {
+  margin-top: $spacing-sm;
+}
+
+.dot {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: $radius-round;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-brand-green;
+  color: $color-primary-light;
+  font-size: 20rpx;
+  font-weight: $font-weight-bold;
+}
+
+.timelineCopy {
+  min-width: 0;
+}
+
+.timelineTime {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.timelineDetail {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.notice {
+  padding: $spacing-lg;
+  border-left: 8rpx solid $color-accent-red;
+  background: #fff;
+}
+
+.noticeText {
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.gallery {
+  margin-top: 80rpx;
+  display: grid;
+  gap: $spacing-md;
+}
+
+.galleryItem {
+  position: relative;
+  height: 400rpx;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+}
+
+.galleryIndex {
+  position: absolute;
+  left: $spacing-md;
+  bottom: $spacing-md;
+  padding: $spacing-xs $spacing-sm;
+  background: $color-accent-red;
+  color: $color-text-white;
+  font-size: 18rpx;
+  font-weight: $font-weight-bold;
+}
+
+.actions {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-sm $page-padding calc($spacing-sm + env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 2rpx solid $color-divider;
+}
+
+.ownerButton,
+.riderButton {
+  @include button-reset;
+  height: $button-height-lg;
+  border: 0;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.ownerButton {
+  background: $color-brand-green;
+  color: $color-text-white;
+}
+
+.riderButton {
+  background: $color-primary;
+  color: $color-brand-ink;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "luyouclub-cloudbase",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "check": "node --check server.cjs && node --check worker.cjs && node --check data-contract.cjs"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@cloudbase/js-sdk": "^3.4.5",
+    "@cloudbase/node-sdk": "^3.10.0"
+  }
+}

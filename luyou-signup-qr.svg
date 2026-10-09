@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#0b211a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1500" rx="64" fill="#f7f1e7"/>
+  <rect x="0" y="0" width="1200" height="320" rx="64" fill="#111816"/>
+  <rect x="0" y="240" width="1200" height="80" fill="#111816"/>
+  <circle cx="600" cy="205" r="130" fill="#f7f1e7" stroke="#e8902e" stroke-width="10"/>
+  <image href="site/assets/deer-club.png" x="485" y="90" width="230" height="230" preserveAspectRatio="xMidYMid slice"/>
+  <text x="600" y="395" text-anchor="middle" fill="#171a1c" font-size="58" font-weight="800" font-family="PingFang SC, Microsoft YaHei, sans-serif">鹿友自驾俱乐部</text>
+  <text x="600" y="455" text-anchor="middle" fill="#d7791f" font-size="30" font-weight="700" letter-spacing="8" font-family="PingFang SC, Microsoft YaHei, sans-serif">张北草原 · 首发招募</text>
+  <rect x="110" y="515" width="980" height="900" rx="48" fill="#ffffff" filter="url(#shadow)"/>
+  <image href="/private/tmp/luyou-signup-qr-base.png" x="200" y="570" width="800" height="800"/>
+  <rect x="390" y="1290" width="420" height="78" rx="39" fill="#ec922d"/>
+  <text x="600" y="1341" text-anchor="middle" fill="#17130d" font-size="30" font-weight="800" font-family="PingFang SC, Microsoft YaHei, sans-serif">微信扫码 · 选择报名身份</text>
+  <text x="600" y="1460" text-anchor="middle" fill="#6d716f" font-size="25" font-family="PingFang SC, Microsoft YaHei, sans-serif">车主报名 · 搭车报名 · 信息仅供活动组织使用</text>
+</svg>

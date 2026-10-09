@@ -1,0 +1,107 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  position: relative;
+  width: 100%;
+  min-height: 208rpx;
+  display: grid;
+  grid-template-columns: 224rpx minmax(0, 1fr);
+  gap: $spacing-md;
+  padding: $spacing-md 0;
+  border-bottom: 2rpx solid $color-divider;
+  transition: all $transition-fast;
+}
+
+.featured {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+}
+
+.pressed {
+  opacity: 0.86;
+  transform: scale(0.99);
+}
+
+.cover,
+.coverFallback {
+  width: 224rpx;
+  height: 160rpx;
+  border-radius: $radius-sm;
+}
+
+.featured .cover,
+.featured .coverFallback {
+  width: 100%;
+  height: 344rpx;
+  border-radius: 0;
+}
+
+.coverFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-brand-ink;
+  color: $color-primary-light;
+  font-size: 36rpx;
+  font-weight: $font-weight-bold;
+}
+
+.content {
+  min-width: 0;
+  padding: 4rpx 44rpx 4rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured .content {
+  padding: $spacing-lg;
+}
+
+.region {
+  color: $color-primary-dark;
+  font-size: 18rpx;
+  font-weight: $font-weight-bold;
+}
+
+.title {
+  margin-top: $spacing-xs;
+  color: $color-text-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  @include text-ellipsis;
+}
+
+.meta,
+.date {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+  @include text-ellipsis;
+}
+
+.price {
+  margin-top: auto;
+  color: $color-text-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 72rpx;
+  color: $color-text-tertiary;
+  font-size: 34rpx;
+}
+
+.featured .arrow {
+  right: $spacing-lg;
+  bottom: $spacing-lg;
+  top: auto;
+  color: $color-primary-dark;
+}

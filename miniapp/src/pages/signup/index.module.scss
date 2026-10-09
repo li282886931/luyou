@@ -1,0 +1,297 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: 40rpx $page-padding 152rpx;
+  background: $color-bg-page;
+}
+
+.heading {
+  padding-bottom: $spacing-lg;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $spacing-md;
+}
+
+.kicker,
+.title,
+.subtitle,
+.sectionNo,
+.sectionTitle,
+.label,
+.depositDesc {
+  display: block;
+}
+
+.kicker,
+.sectionNo {
+  color: $color-primary-dark;
+  font-size: 20rpx;
+  font-weight: $font-weight-bold;
+}
+
+.title {
+  margin-top: $spacing-xs;
+  font-size: 44rpx;
+  font-weight: $font-weight-bold;
+}
+
+.subtitle {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: $font-size-xs;
+}
+
+.step {
+  flex: 0 0 auto;
+  color: $color-primary-dark;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+}
+
+.progress {
+  height: 8rpx;
+  margin: $spacing-lg 0;
+  overflow: hidden;
+  border-radius: $radius-round;
+  background: #ded9cf;
+}
+
+.progress view {
+  height: 100%;
+  border-radius: $radius-round;
+  background: $color-text-primary;
+  transition: width $transition-base;
+}
+
+.section {
+  padding: $spacing-lg 0;
+  border-top: 8rpx solid $color-text-primary;
+  background: transparent;
+}
+
+.sectionTitle {
+  margin: $spacing-xs 0 $spacing-lg;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.label {
+  margin: $spacing-md 0 $spacing-xs;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.input,
+.picker,
+.textarea {
+  width: 100%;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-sm;
+  background: $color-bg-card;
+  color: $color-text-primary;
+  font-size: $font-size-md;
+}
+
+.input,
+.picker {
+  min-height: $button-height-md;
+  padding: 0 $spacing-md;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textarea {
+  min-height: 184rpx;
+  padding: $spacing-md;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.privacy {
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $radius-sm;
+  background: #eef4f0;
+  color: $color-brand-moss;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+}
+
+.locationButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-sm;
+  margin-top: $spacing-sm;
+  border: 2rpx solid $color-brand-green;
+  border-radius: $radius-button;
+  justify-content: center;
+  color: $color-brand-green;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.chip {
+  @include button-reset;
+  width: auto;
+  min-width: 104rpx;
+  height: $button-height-sm;
+  padding: 0 $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.chipActive {
+  border-color: $color-brand-ink;
+  background: $color-brand-ink;
+  color: $color-text-white;
+}
+
+.optionRow {
+  min-height: 96rpx;
+  margin-top: $spacing-md;
+  padding: 0 $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  background: #faf8f3;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.ownerFields {
+  margin-top: $spacing-lg;
+  padding-top: $spacing-sm;
+  border-top: 2rpx solid $color-divider;
+}
+
+.deposit {
+  margin-top: $spacing-lg;
+  padding: $spacing-lg;
+  border: 2rpx solid #efc38d;
+  border-radius: $radius-sm;
+  background: #fff8ee;
+}
+
+.depositHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: $font-weight-bold;
+}
+
+.depositHead text:last-child {
+  color: $color-error;
+  font-size: 40rpx;
+}
+
+.depositDesc {
+  margin-top: $spacing-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+}
+
+.qr {
+  width: 360rpx;
+  height: 360rpx;
+  margin: $spacing-md auto;
+  display: block;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+}
+
+.refund {
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  display: grid;
+  gap: $spacing-xs;
+  background: #fff0dc;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+}
+
+.refund text:first-child {
+  color: #a94922;
+  font-weight: $font-weight-bold;
+}
+
+.confirmRow {
+  margin-top: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-text-primary;
+  font-size: $font-size-xs;
+  line-height: $line-height-normal;
+}
+
+.actions {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-sm $page-padding calc($spacing-sm + env(safe-area-inset-bottom));
+  display: flex;
+  gap: $spacing-sm;
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 2rpx solid $color-divider;
+}
+
+.backButton,
+.nextButton {
+  @include button-reset;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  justify-content: center;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.backButton {
+  width: 200rpx;
+  border: 2rpx solid $color-border;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+}
+
+.nextButton {
+  flex: 1;
+  border: 0;
+  background: $color-primary;
+  color: $color-brand-ink;
+}

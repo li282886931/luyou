@@ -1,0 +1,17 @@
+.DS_Store
+.sites-runtime/
+.pai/
+**/.pai/
+node_modules/
+node_modules
+**/node_modules/
+**/node_modules
+**/.swc/
+dist/
+**/dist/
+release/
+miniapp/project.private.config.json
+*.tar.gz
+data/signups.json
+__pycache__/
+release/luyouclub-cloudbase/cloudbaserc.json

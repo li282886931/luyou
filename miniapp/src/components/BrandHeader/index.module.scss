@@ -1,0 +1,48 @@
+@use '@/styles/variables.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-text-primary;
+}
+
+.light {
+  color: $color-text-white;
+}
+
+.mark {
+  width: 72rpx;
+  height: 72rpx;
+  border: 2rpx solid rgba(233, 137, 40, 0.7);
+  border-radius: $radius-round;
+  background: $color-brand-ink;
+  color: $color-primary-light;
+  font-size: 32rpx;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  margin-top: $spacing-xs;
+  color: $color-text-tertiary;
+  font-size: 18rpx;
+}
+
+.light .eyebrow {
+  color: rgba(255, 255, 255, 0.56);
+}

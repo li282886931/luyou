@@ -1,0 +1,202 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  padding: 40rpx $page-padding 64rpx;
+  background: $color-bg-page;
+}
+
+.empty {
+  min-height: 680rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 8rpx solid $color-text-primary;
+  text-align: center;
+}
+
+.emptyMark {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: $radius-round;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-brand-ink;
+  color: $color-primary-light;
+  font-size: 48rpx;
+  font-weight: $font-weight-bold;
+}
+
+.emptyTitle {
+  margin-top: $spacing-lg;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.emptyDesc {
+  max-width: 520rpx;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+}
+
+.primaryButton,
+.secondaryButton {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  justify-content: center;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.primaryButton {
+  max-width: 440rpx;
+  margin-top: $spacing-xl;
+  border: 0;
+  background: $color-primary;
+  color: $color-brand-ink;
+}
+
+.secondaryButton {
+  margin-top: $spacing-lg;
+  border: 2rpx solid $color-brand-green;
+  background: transparent;
+  color: $color-brand-green;
+}
+
+.profileCard {
+  margin-top: $spacing-xl;
+  padding: $spacing-lg;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background: $color-brand-ink;
+  color: $color-text-white;
+}
+
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  flex: 0 0 auto;
+  border-radius: $radius-round;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-primary;
+  color: $color-brand-ink;
+  font-size: 36rpx;
+  font-weight: $font-weight-bold;
+}
+
+.person {
+  min-width: 0;
+  flex: 1;
+}
+
+.role,
+.name,
+.meta {
+  display: block;
+}
+
+.role {
+  color: $color-primary-light;
+  font-size: $font-size-xs;
+}
+
+.name {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.meta {
+  margin-top: $spacing-xs;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 20rpx;
+  @include text-ellipsis;
+}
+
+.status {
+  flex: 0 0 auto;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-round;
+  background: rgba(233, 137, 40, 0.18);
+  color: $color-primary-light;
+  font-size: 20rpx;
+  font-weight: $font-weight-semibold;
+}
+
+.matchPanel,
+.detailPanel {
+  margin-top: 48rpx;
+  padding: $spacing-lg 0;
+  border: 0;
+  border-top: 8rpx solid $color-text-primary;
+  border-radius: 0;
+  background: transparent;
+}
+
+.matchHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+}
+
+.pending {
+  color: $color-primary-dark;
+  font-weight: $font-weight-semibold;
+}
+
+.matchTitle {
+  display: block;
+  margin-top: $spacing-md;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+}
+
+.matchDesc {
+  display: block;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+  max-width: 620rpx;
+  line-height: $line-height-loose;
+}
+
+.panelTitle {
+  display: block;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+}
+
+.detailRow {
+  min-height: 88rpx;
+  display: grid;
+  grid-template-columns: 180rpx minmax(0, 1fr);
+  align-items: center;
+  gap: $spacing-sm;
+  border-top: 2rpx solid $color-divider;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.detailRow text:last-child {
+  color: $color-text-primary;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
